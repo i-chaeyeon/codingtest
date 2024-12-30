@@ -12,6 +12,7 @@
         "string_view": "cpp",
         "unordered_map": "cpp",
         "list": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "stack": "cpp"
     }
 }
