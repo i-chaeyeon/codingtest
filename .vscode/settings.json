@@ -13,6 +13,7 @@
         "unordered_map": "cpp",
         "list": "cpp",
         "vector": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "queue": "cpp"
     }
 }
