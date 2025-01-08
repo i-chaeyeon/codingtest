@@ -11,23 +11,24 @@ int main(void){
     int N;
     cin >> N;
 
-    int cur = 1;
-    int num;
-    int idx = 0;
+    int num = 0; //입력될 숫자
+    int cur = 1; //트래킹
 
     for(int i=0; i<N; i++){
-        cin >> num; // 
+        cin >> num; // 1 2 5 3
         while(cur<=num){
-            s.push(cur++); // 
-            v[idx++] = '+';
+            s.push(cur++); // 3 4 5
+            v.push_back('+');
         }
-        while(s.top() != num){
-            s.pop();
-            v[idx++] = '-';
+        if(s.top() != num){
+            cout << "NO\n";
+            return 0;
         }
+        s.pop(); // 3 
+        v.push_back('-');
     }
 
-    for(auto c : v){
-        cout << c << ' ';
+    for (auto c : v){
+        cout << c << "\n";
     }
 }
