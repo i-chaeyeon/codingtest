@@ -6,25 +6,29 @@ using namespace std;
 // 출력되면 이전의 상태로 돌아가 다른 경우의 수
 // 모든 경우의 수를 반복할 때까지 출력
 
+// 1부터 N까지 자연수 중에서 중복 없이 M개를 고른 수열 ex) 123, 124 ...
+
 int n, m;
 int arr[10]; // 수열을 담을 배열
 bool isused[10]; // 특정 수가 쓰였는지를 true 혹은 false로 나타내는 배열
 
-void func(int k){ // 현재 k개까지 수를 택했음
+void func(int k){ // 현재 k개까지 수를 택한 상황에서 arr[k]를 정하는 함수
+    // 재귀의 종료 조건
     if (k==m){ // m개까지 모두 택했으면
         for(int i=0; i<m; i++){
             cout << arr[i] << ' '; // arr에 기록해둔 수를 출력
+        }
         cout << "\n";
         return;
-        }
     }
 
+    // 재귀 body
     for(int i=1; i<=n; i++){ // 1부터 n까지의 수에 대해 
         if(!isused[i]){ // 아직 i가 사용되지 않았으면
             arr[k] = i; // k번째 수는 i가 됨
             isused[i] = 1; // i가 사용되었다는 표시를 남기고
             func(k+1); // 다음 수를 정하러 한 단계 더 들어감
-            isused[i] = 0; // k번째 수가 i가 되면 모든 경우를 확인함
+            isused[i] = 0; //모든 과정이 끝났으니 i가 사용되지 않고 있음을 명시
         }
     }
 }
