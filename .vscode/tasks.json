@@ -10,7 +10,7 @@
                 "-Wall",
                 "-Wextra",
                 "-O2",
-                "-I/Users/i_chae_yeon/bits", 
+                "-I/Users/i_chae_yeon", 
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
