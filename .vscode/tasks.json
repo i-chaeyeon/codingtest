@@ -1,22 +1,25 @@
 {
     "version": "2.0.0",
     "tasks": [
-      {
-        "label": "Build with clang++ and ~/bits/stdc++.h",
-        "type": "shell",
-        "command": "clang++",
-        "args": [
-            "-std=c++17",
-            "-I", "/Users/i_chae_yeon",       // 👈 이거 주의!
-            "${file}",
-            "-o",
-            "${fileDirname}/${fileBasenameNoExtension}"
-        ],
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        },
-        "problemMatcher": ["$gcc"]
-      }
+        {
+            "label": "Build with g++-14",
+            "type": "shell",
+            "command": "/opt/homebrew/bin/g++-14",
+            "args": [
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "-O2",
+                "-I/Users/i_chae_yeon/bits", 
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
     ]
-  }
+}
